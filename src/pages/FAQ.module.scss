@@ -1,0 +1,19 @@
+@import '../assets/styles/abstracts/reset';
+@import '../assets/styles/abstracts/variables';
+@import '../assets/styles/abstracts/mediaquery';
+
+.faqCont{;
+    height: 100vh;
+    p{
+        font-family: $thirdFont;
+    }
+}
+
+.ans{
+    span{
+        text-decoration: underline;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
