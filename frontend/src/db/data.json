@@ -1,0 +1,33 @@
+{
+    "users": [
+        {
+            "sapID":"11555",
+            "name":"Toghrul",
+            "surname":"Tahmazli",
+            "email":"t.t.tahmazli@socarpolymer.az",
+            "password":"toghtest"
+        }
+        ,
+        {
+            "sapID":"11204",
+            "name":"Name1",
+            "surname":"Surname1",
+            "email":"mail1@socarpolymer.az",
+            "password":"passpass"
+        },
+        {
+            "sapID":"11205",
+            "name":"Name2",
+            "surname":"Surname2",
+            "email":"mail2@socarpolymer.az",
+            "password":"passpass2"
+        },
+        {
+            "sapID":"11206",
+            "name":"Test",
+            "surname":"Test",
+            "email":"test@socarpolymer.az",
+            "password":"test"
+        }
+    ]
+}

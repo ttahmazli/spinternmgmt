@@ -1,0 +1,12 @@
+.loginBody{
+    background-image: url("../images/bg-for-home.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.overlayDiv{
+    background: rgb(42, 33, 106);
+    opacity: 0.8;
+    height: 100vh;
+}

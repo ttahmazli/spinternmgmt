@@ -1,0 +1,49 @@
+@import '../../assets/styles/abstracts/reset';
+@import '../../assets/styles/abstracts/variables';
+@import '../../assets/styles/abstracts/mediaquery';
+
+
+
+.cardBox{
+    display: flex;
+    align-items: center;
+    height: 120px;
+    gap: 40px;
+    width: 400px;
+    background-color: white; 
+    box-shadow: 0px 3px 20px -15px $primaryColor;
+    border-radius: 16px;
+    padding: 10px 20px;
+    transition: 0.5s;
+    transform: scale(1);
+
+    &:hover{
+        // transform: scale(1.05);
+        transform: scale(1.05);
+        cursor: pointer;
+        box-shadow: 0px 3px 20px -10px $primaryColor;
+    }
+}
+
+.logoPart{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+}
+
+.textPart{
+    h3{
+        color: $primaryColor;
+        font-size: 20px;
+        font-family: $primaryFont;
+    }
+    p{
+        font-size: 16px;
+        color: $primaryColor;
+    }
+}
