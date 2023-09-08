@@ -27,7 +27,7 @@ namespace backendapp.Controllers
             {
                 adapter = new SqlDataAdapter("LOGIN", conn);
                 adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adapter.SelectCommand.Parameters.AddWithValue("@NAME", user.name);
+                adapter.SelectCommand.Parameters.AddWithValue("@USERNAME", user.username);
                 adapter.SelectCommand.Parameters.AddWithValue("@PASSWORD", user.password);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);

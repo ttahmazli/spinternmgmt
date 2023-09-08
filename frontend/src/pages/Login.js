@@ -6,12 +6,8 @@ function Login() {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleName = (value) => {
-        setName(value);
-    };
-    const handlePassword = (value) => {
-        setPassword(value);
-    };
+  
+
 
     const handleLogin = () => {
         const data = {
@@ -29,22 +25,20 @@ function Login() {
     }
 
     return(
-        <Fragment><label>Name</label><input
+        <Fragment><label>Name</label>
+        <input
         type="text"
         id="txtName"
         placeholder="Enter Name"
-        onChange={(e) => handleName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         />
-        <br></br>
         <label>Username</label>
         <input
         type = "text"
         id = "txtPassword"
         placeholder="Enter Password"
-        onChange={(e) => handlePassword(e.target.value)}
+        onChange={(e) => setPassword(e.target.value)}
         />
-        <br></br>
-        <br></br>
         <button onClick={() => handleLogin()}>Save</button></Fragment>
     )
 }

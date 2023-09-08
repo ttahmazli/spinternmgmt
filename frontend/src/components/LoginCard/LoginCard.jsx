@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import LoginCardStyle from './LoginCardStyle.module.css';
 import { useState, useEffect } from 'react';
 import db from "../../db/data.json"
@@ -12,20 +12,28 @@ const LoginCard = () => {
   const [username, setUsername] = useState("");
   const [password, setPassw] = useState("");
   //usersData sifirlanir her defe
-  
-  const { login, isLogged, logout,users,setUsersData } = useContext(AuthContext);
+
+  const { login, isLogged, logout, users, setUsersData } = useContext(AuthContext);
 
   const navigate = useNavigate()
 
-  
+
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const user = db.users.find(user => user.email.split("@")[0] === username && user.password === password);
-    
-    const data = { username: username, password: password, name:user.name, surname:user.surname, sapID:user.sapID };
 
+
+    const url = 'https://localhost:44319/api/Test/Login';
+    const data = { username: username, password: password, name: result.name, surname: result.surname, sapID: result.sapID };
+    const user;
+    
+    axios.get(url)
+    .then((result) => {
+      user = result.find(user => user.username === username && user.password === password);
+    }).catch((error) => {
+      alert(error);
+    })
 
     setUsersData([data]);
 
@@ -33,7 +41,7 @@ const LoginCard = () => {
     if (user) {
       login()
       console.log(data)
-    }else{
+    } else {
       logout()
     }
   }
@@ -54,7 +62,6 @@ const LoginCard = () => {
             autoComplete="off"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-
             required
           />
         </div>
