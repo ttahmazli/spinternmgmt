@@ -1,89 +1,80 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useState, useContext } from "react";
+import axios from "axios";
 import LoginCardStyle from './LoginCardStyle.module.css';
-import { useState, useEffect } from 'react';
-import db from "../../db/data.json"
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../AuthContext';
 
+function Login() {
 
-const LoginCard = () => {
-
-
-  const [username, setUsername] = useState("");
-  const [password, setPassw] = useState("");
-  //usersData sifirlanir her defe
-
-  const { login, isLogged, logout, users, setUsersData } = useContext(AuthContext);
-
-  const navigate = useNavigate()
-
-
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-
-    const url = 'https://localhost:44319/api/Test/Login';
-    const data = { username: username, password: password, name: result.name, surname: result.surname, sapID: result.sapID };
-    const user;
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
     
-    axios.get(url)
-    .then((result) => {
-      user = result.find(user => user.username === username && user.password === password);
-    }).catch((error) => {
-      alert(error);
-    })
+    const { login, isLogged, logout, users, setUsersData } = useContext(AuthContext);
 
-    setUsersData([data]);
+    const handleLogin = (e) => {
 
+        e.preventDefault()
 
-    if (user) {
-      login()
-      console.log(data)
-    } else {
-      logout()
-    }
-  }
+        const data = {
+            username: name,
+            password: password,
 
+        };
 
-  return (
-    <div className={LoginCardStyle.cardDiv}>
-      <h2>Login SP Services</h2>
-      <form onSubmit={handleSubmit}>
+        let  db={};
+        async function doGetRequest() {
+          let res = await axios
+          .post('https://localhost:44319/api/Test/Login', data);
+                
+          db = res.data;
+          if (db===null){
+            alert("wrong login credentials")
+          }
+          else{
+            setUsersData([db]);
+           login(); 
+          }
+          
+        }
+                
+        doGetRequest();
+      }
 
-        <div className={LoginCardStyle.usernameInput}>
-          <label>
-            Username:
-          </label>
-          <input
-            type="text"
-            id="username"
-            autoComplete="off"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
+    return (
+        <div className={LoginCardStyle.cardDiv}>
+            <h2>Login SP Services</h2>
+            <form onSubmit={handleLogin}>
+
+                <div className={LoginCardStyle.usernameInput}>
+                    <label>
+                        Username:
+                    </label>
+                    <input
+                        type="text"
+                        id="username"
+                        autoComplete="off"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className={LoginCardStyle.passwInput}>
+                    <label htmlFor="passw">Password</label>
+                    <input
+                        type="password"
+                        name="passw"
+                        id="passw"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+
+                <button type="submit" id={LoginCardStyle.submitBtn}>Login</button>
+
+            </form>
+
         </div>
-
-
-        <div className={LoginCardStyle.passwInput}>
-          <label htmlFor="passw">Password</label>
-          <input
-            type="password"
-            name="passw"
-            id="passw"
-            value={password}
-            onChange={(e) => setPassw(e.target.value)}
-          />
-        </div>
-
-        <button type="submit" id={LoginCardStyle.submitBtn}>Login</button>
-
-      </form>
-
-    </div>
-  )
+    )
 }
 
-export default LoginCard
+export default Login;

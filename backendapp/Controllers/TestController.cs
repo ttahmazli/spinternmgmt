@@ -7,6 +7,8 @@ using System.Web.Http;
 using System.Data;
 using System.Configuration;
 using backendapp.Models;
+using System.Diagnostics;
+using System.Web.Caching;
 
 namespace backendapp.Controllers
 {
@@ -20,9 +22,8 @@ namespace backendapp.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public string Login(User user)
+        public User Login(User user)
         {
-            string msg = string.Empty;
             try
             {
                 adapter = new SqlDataAdapter("LOGIN", conn);
@@ -31,21 +32,26 @@ namespace backendapp.Controllers
                 adapter.SelectCommand.Parameters.AddWithValue("@PASSWORD", user.password);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
-                    msg = "user is valid";
+                    User currentUser = new User();
+                    currentUser.id = (int)dt.Rows[0][0];
+                    currentUser.username = dt.Rows[0][1].ToString();
+                    currentUser.name = dt.Rows[0][2].ToString();
+                    currentUser.surname = dt.Rows[0][3].ToString();
+                    currentUser.email = dt.Rows[0][4].ToString(); ;
+                    currentUser.password = dt.Rows[0][5].ToString();
+                    return currentUser;
                 }
                 else
                 {
-                    msg = "user in invalid";
+                    return null;
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                msg = ex.Message;
+                return null;
             }
-
-            return msg;
         }
     }
 }
