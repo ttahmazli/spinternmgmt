@@ -2,7 +2,7 @@
     "services": [
         {
             "id":"1",
-            "serviceName":"Mail to SAP",
+            "serviceName":"ERP Support",
             "description":"lorem ipsum lalallala",
             "subject":"sap",
             "tag":"sapIssues",
@@ -37,7 +37,7 @@
         
         {
             "id":"5",
-            "serviceName":"IT Issues",
+            "serviceName":"IT Support",
             "description":"STARLIMS BLAH BLAH",
             "subject":"it",
             "tag":"itIssues",
@@ -76,6 +76,22 @@
             "subject":"others",
             "image":"/contact.png",
             "href":"https://www.facebook.com"
+        },
+        {
+            "id":"10",
+            "serviceName":"Task Management",
+            "description":"lorem ipsum lalallala",
+            "subject":"others",
+            "image":"/task.png",
+            "href":"https://www.facebook.com"
+        },
+        {
+            "id":"11",
+            "serviceName":"POB",
+            "description":"lorem ipsum lalallala",
+            "subject":"others",
+            "image":"/pob.jpg",
+            "href":"https://pob.socarpolymer.az"
         }
 
     ]
