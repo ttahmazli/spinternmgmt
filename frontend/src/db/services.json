@@ -16,23 +16,23 @@
             "description":"lorem ipsum lalallala",
             "subject":"starlims",
             "image":"/starlims.jpg",
-            "href":"https://www.google.com"
+            "href":"http://srlsq01.socarpolymer.local/srlsqas/starthtml.lims"
         },
         {
             "id":"3",
-            "serviceName":"STARLIMS PRD",
+            "serviceName":"STARLIMS P01",
             "description":"STARLIMS BLAH BLAH",
             "subject":"starlims",
             "image":"/starlims.jpg",
-            "href":"https://www.facebook.com"
+            "href":"https://srlsp01.socarpolymer.az/srlsp01/starthtml.lims"
         },
         {
             "id":"4",
-            "serviceName":"STARLIMS",
+            "serviceName":"STARLIMS P02",
             "description":"STARLIMS BLAH BLAH",
             "subject":"starlims",
             "image":"/starlims.jpg",
-            "href":""
+            "href":"https://srlsp02.socarpolymer.az/srlsp02/starthtml.lims"
         },
         
         {
@@ -41,7 +41,7 @@
             "description":"STARLIMS BLAH BLAH",
             "subject":"it",
             "tag":"itIssues",
-            "image":"/starlims.jpg",
+            "image":"/it.png",
             "href":""
         },
         {
@@ -49,16 +49,16 @@
             "serviceName":"MOC",
             "description":"MOC SP Service",
             "subject":"others",
-            "image":"/starlims.jpg",
+            "image":"/moc.png",
             "href":"https://www.twitter.com"
         },
         {
             "id":"7",
-            "serviceName":"DNS",
+            "serviceName":"DMS",
             "description":"Document Control System SP",
             "subject":"others",
-            "image":"/starlims.jpg",
-            "href":""
+            "image":"/dms.png",
+            "href":"https://dms.socarpolymer.az"
         },
 
         {
@@ -71,10 +71,10 @@
         },
         {
             "id":"9",
-            "serviceName":"Phone numbers of Workers",
+            "serviceName":"Phone Numbers of Workers",
             "description":"lorem ipsum lalallala",
             "subject":"others",
-            "image":"/starlims.jpg",
+            "image":"/contact.png",
             "href":"https://www.facebook.com"
         }
 
