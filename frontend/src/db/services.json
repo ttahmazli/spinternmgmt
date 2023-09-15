@@ -50,7 +50,7 @@
             "description":"MOC SP Service",
             "subject":"others",
             "image":"/moc.png",
-            "href":"https://www.twitter.com"
+            "href":"http://sptm.socarpolymer.local:8080/ords/mis/r/mis/login?session=10764049206116"
         },
         {
             "id":"7",
@@ -67,7 +67,7 @@
             "description":"lorem ipsum lalallala",
             "subject":"sap",
             "image":"/fiori.png",
-            "href":""
+            "href":"https://sap.socarpolymer.az/fiori"
         },
         {
             "id":"9",
@@ -75,7 +75,7 @@
             "description":"lorem ipsum lalallala",
             "subject":"others",
             "image":"/contact.png",
-            "href":"https://www.facebook.com"
+            "href":"https://outlook.office.com/people/"
         },
         {
             "id":"10",
@@ -83,7 +83,7 @@
             "description":"lorem ipsum lalallala",
             "subject":"others",
             "image":"/task.png",
-            "href":"https://www.facebook.com"
+            "href":"http://sptm.socarpolymer.local:8080/ords/f?p=101:LOGIN:4691497701739:::::"
         },
         {
             "id":"11",
